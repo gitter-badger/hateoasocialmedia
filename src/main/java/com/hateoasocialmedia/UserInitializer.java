@@ -1,7 +1,7 @@
 package com.hateoasocialmedia;
 
 import com.hateoasocialmedia.user.User;
-import com.hateoasocialmedia.user.UserRepository;
+import com.hateoasocialmedia.user.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -14,7 +14,7 @@ import java.util.List;
 public class UserInitializer implements ApplicationListener<ContextRefreshedEvent> {
 
     @Autowired
-    private UserRepository userRepository;
+    private UsersRepository usersRepository;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -27,7 +27,7 @@ public class UserInitializer implements ApplicationListener<ContextRefreshedEven
         users.add(createUser("William", "Riker", "William Riker", "@NumberOne", null));
         users.add(createUser("Geordi", "La Forge", "Geordi La Forge", "@Geordi", null));
         users.add(createUser("Worf", null, "Worf", "@Worf", null));
-        userRepository.save(users);
+        usersRepository.save(users);
     }
 
     private User createUser(String theFirstName, String theLastName, String theDisplayName, String theHandle, String theUserImageUrl) {

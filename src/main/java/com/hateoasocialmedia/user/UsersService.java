@@ -1,6 +1,10 @@
 package com.hateoasocialmedia.user;
 
-public interface UserService {
+import java.util.List;
+
+public interface UsersService {
+
+    List<User> getUsers();
 
     User getUserByHandle(String theHandle);
 

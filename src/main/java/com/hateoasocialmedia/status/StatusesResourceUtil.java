@@ -1,6 +1,6 @@
 package com.hateoasocialmedia.status;
 
-import com.hateoasocialmedia.user.UserController;
+import com.hateoasocialmedia.user.UsersController;
 import org.springframework.hateoas.Resource;
 
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
@@ -16,7 +16,7 @@ public class StatusesResourceUtil {
                 status)).withRel("update"));
         status_resource.add(linkTo(methodOn(StatusesController.class).deleteStatus(status.getUserId(),
                 status)).withRel("delete"));
-        status_resource.add(linkTo(methodOn(UserController.class).getUser(status.getUserId())).withRel("get"));
+        status_resource.add(linkTo(methodOn(UsersController.class).getUsers(status.getUserId())).withRel("get"));
         return status_resource;
     }
 }

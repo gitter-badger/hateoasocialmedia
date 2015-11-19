@@ -2,7 +2,7 @@ package com.hateoasocialmedia.user;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepository extends CrudRepository<User, Long> {
+public interface UsersRepository extends CrudRepository<User, Long> {
 
     User findByHandle(String theHandle);
 
